@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Contoh Index Baru</title>
+</head>
+<body>
+    <div class="container mx-auto">
+        <h1 class="text-2xl font-bold mt-10">Contoh Index Baru</h1>
+        <p>Ini adalah contoh halaman index baru.</p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+        </p>
+        
+        <h2 class="text-lg font-bold mt-10"></h2>List Buku yang bisa dibaca :</h2>
+        <ul>
+            <li th:each="book : ${books}">
+                <a th:href="@{/books/{id}(id=${book.id})}">
+                    <span th:text="${book.title}"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
